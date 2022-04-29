@@ -24,7 +24,7 @@ This installation is based in Ubuntu 22 OS.
 
 To install version 14, just run this command: 
 
-- `sudo apt instal postgresql`
+- `sudo apt install postgresql`
 
 I Recommend to set a password to user `postgres` using this commands:
 
@@ -35,3 +35,13 @@ I Recommend to set a password to user `postgres` using this commands:
 To start postgresql, use this command:
 
 - `sudo service postgresql start`
+
+### Redis
+
+To install version 6, just run this command: 
+
+- `sudo apt install redis`
+
+To start redis-server, use this command:
+
+- `sudo service redis-server start`
