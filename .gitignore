@@ -14,4 +14,4 @@ yarn-error.log
 /.vscode
 
 .github/workflows/reports/
-.github/workflows/coverage-summary
+.github/workflows/coverage-*

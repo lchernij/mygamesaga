@@ -41,7 +41,7 @@ jobs:
       run: php artisan config:clear
     
     - name: Execute tests (Unit and Feature tests) via PHPUnit With code coverage
-      run: vendor/bin/phpunit --coverage-html .github/workflows/reports/ --coverage-text=.github/workflows/coverage; sed -n 6,9p -- .github/workflows/coverage > .github/workflows/coverage-summary
+      run: vendor/bin/phpunit --coverage-html .github/workflows/reports/ --coverage-text=.github/workflows/coverage-text; sed -n 6,9p -- .github/workflows/coverage-text > .github/workflows/coverage-summary
       env:
         DB_CONNECTION: pgsql
         DB_HOST: localhost
