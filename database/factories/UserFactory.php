@@ -39,4 +39,18 @@ class UserFactory extends Factory
             ];
         });
     }
+
+    /**
+     * Indicate that the model's is_admin should be true.
+     *
+     * @return static
+     */
+    public function isAdmin()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'is_admin' => true,
+            ];
+        });
+    }
 }
