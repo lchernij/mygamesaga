@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Guess\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,12 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+# Guess context
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+# Admin context
+Route::prefix('hq')->middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
 
-Route::prefix('hq')->get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
+# Auth context
 require __DIR__ . '/auth.php';
