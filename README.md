@@ -6,6 +6,15 @@
 
 This installation is based in Ubuntu 22 OS.
 
+## Commum commands
+
+|Actions|Command|
+|---|---|
+|Run the application|`php artisan serve`|
+|Build JS and CSS|`npm run dev`|
+|Run tests|`php artisan test`|
+|Run tests with coverage|`vendor/bin/phpunit --coverage-html .github/workflows/reports/`|
+
 ### General
 
 #### PHP 8.1 and dependencies
@@ -15,6 +24,10 @@ This installation is based in Ubuntu 22 OS.
 #### Composer 2
 
 - `sudo apt install composer`
+
+#### NPM
+
+- `sudo apt install npm`
 
 #### Generate Application Key
 
@@ -53,3 +66,13 @@ To install version 6, just run this command:
 To start redis-server, use this command:
 
 - `sudo service redis-server start`
+
+### Laravel Breeze
+
+To build the interface and some default pages and routes, I used Laravel Breeze. See more [here](https://laravel.com/docs/9.x/starter-kits#laravel-breeze-installation)
+
+How this was installed:
+
+- `php artisan breeze:install`
+- `npm install`
+- `npm run dev`
