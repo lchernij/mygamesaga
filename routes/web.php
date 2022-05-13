@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\GamePlataformController;
 use App\Http\Controllers\Guess\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,10 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 # Admin context
 Route::prefix('hq')->middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::resource('/game-plataforms', GamePlataformController::class);
+    Route::get('/game-plataforms/{game_plataform}/active', [GamePlataformController::class, 'active'])->name('game-plataforms.active');
+    Route::get('/game-plataforms/{game_plataform}/inactive', [GamePlataformController::class, 'inactive'])->name('game-plataforms.inactive');
 });
 
 # Auth context
