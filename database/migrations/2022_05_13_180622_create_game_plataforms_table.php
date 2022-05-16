@@ -18,6 +18,7 @@ return new class extends Migration
 
             $table->string("name");
             $table->string("company")->nullable();
+            $table->string("acronym")->nullable();
             $table->boolean("is_active")->default(true);
 
             $table->timestamps();
