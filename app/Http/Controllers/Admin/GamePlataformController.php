@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\GamePlataform\GamePlataformStoreRequest;
+use App\Http\Requests\Admin\GamePlataform\GamePlataformUpdateRequest;
 use App\Models\GamePlataform;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class GamePlataformController extends Controller
@@ -22,7 +23,7 @@ class GamePlataformController extends Controller
         return view('admin.game_plataform.create');
     }
 
-    public function store(Request $request): RedirectResponse
+    public function store(GamePlataformStoreRequest $request): RedirectResponse
     {
         $gamePlataform = new GamePlataform($request->all());
         $gamePlataform->is_active = $request->input('is_active') ? true : false;
@@ -44,7 +45,7 @@ class GamePlataformController extends Controller
         return view('admin.game_plataform.edit', $data);
     }
 
-    public function update(GamePlataform $gamePlataform, Request $request): RedirectResponse
+    public function update(GamePlataform $gamePlataform, GamePlataformUpdateRequest $request): RedirectResponse
     {
         $gamePlataform->fill($request->all());
         $gamePlataform->is_active = $request->input('is_active') ? true : false;

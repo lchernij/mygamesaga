@@ -2,12 +2,17 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Game Plataform') }} ({{$gamePlataforms->total()}})
+
+        </h2>
+    </x-slot>
+    <x-slot name="pageActions">
+        <x-page-actions>
             <a href="{{ route('game-plataforms.create') }}">
                 <x-button class="ml-4">
                     {{ __('Add new') }}
                 </x-button>
             </a>
-        </h2>
+        </x-page-actions>
     </x-slot>
 
     <div class="py-12">
