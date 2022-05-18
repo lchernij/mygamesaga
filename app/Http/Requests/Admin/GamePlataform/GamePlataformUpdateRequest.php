@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests\Admin\GamePlataform;
 
+
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class GamePlataformUpdateRequest extends FormRequest
 {
@@ -24,10 +26,10 @@ class GamePlataformUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:255|unique:gameplataforms',
-            'acronym' => 'nullable|max:10|unique:gameplataforms,' . $this->gamePlataform->id,
+            'name' => 'required|max:255|'. Rule::unique('game_plataforms')->ignore($this->game_plataform->id),
+            'acronym' => 'nullable|max:10|'. Rule::unique('game_plataforms')->ignore($this->game_plataform->id),
             'company' => 'nullable|max:255',
-            'is_active' => 'nullable|boolean'
+            'is_active' => 'nullable|string|' . Rule::in(['on'])
         ];
     }
 }

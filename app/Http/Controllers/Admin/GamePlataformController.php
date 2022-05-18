@@ -29,7 +29,7 @@ class GamePlataformController extends Controller
         $gamePlataform->is_active = $request->input('is_active') ? true : false;
         $gamePlataform->save();
 
-        return redirect()->action([self::class, 'index']);
+        return redirect()->action([self::class, 'show'], ['game_plataform' => $gamePlataform]);
     }
 
     public function show(GamePlataform $gamePlataform): View
@@ -51,7 +51,7 @@ class GamePlataformController extends Controller
         $gamePlataform->is_active = $request->input('is_active') ? true : false;
         $gamePlataform->save();
 
-        return redirect()->action([self::class, 'index']);
+        return redirect()->action([self::class, 'show'], ['game_plataform' => $gamePlataform]);
     }
 
     public function active(GamePlataform $gamePlataform): RedirectResponse

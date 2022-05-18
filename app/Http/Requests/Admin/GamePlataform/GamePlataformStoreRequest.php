@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Admin\GamePlataform;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class GamePlataformStoreRequest extends FormRequest
 {
@@ -24,10 +25,10 @@ class GamePlataformStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:255|unique:gameplataforms',
-            'acronym' => 'nullable|max:10|unique:gameplataforms',
+            'name' => 'required|max:255|unique:game_plataforms',
+            'acronym' => 'nullable|max:10|unique:game_plataforms',
             'company' => 'nullable|max:255',
-            'is_active' => 'nullable|boolean'
+            'is_active' => 'nullable|string|' . Rule::in(['on'])
         ];
     }
 }
