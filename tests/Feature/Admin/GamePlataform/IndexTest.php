@@ -46,6 +46,10 @@ class IndexTest extends TestCase
             ->assertSeeText($gamePlatform->company)
             ->assertSeeText($gamePlatform->status)
             ->assertSeeText(['More', 'Edit', 'Inactive']);
+
+        $this->assertStringContainsString('<a class="button" href="http://localhost/hq/game-plataforms/1">', $response->content());
+        $this->assertStringContainsString('<a class="button" href="http://localhost/hq/game-plataforms/1/edit">', $response->content());
+        $this->assertStringContainsString('<a class="button" href="http://localhost/hq/game-plataforms/1/inactive">', $response->content());
     }
 
     public function test_game_plataform_screen_can_be_rendered_pagination()
@@ -57,6 +61,8 @@ class IndexTest extends TestCase
 
         $response->assertStatus(200)
             ->assertSeeText("Game Plataform (16)");
+
+        $this->assertStringContainsString("http://localhost/hq/game-plataforms?page=2", $response->content());
     }
 
     private function setAdminUser(): void

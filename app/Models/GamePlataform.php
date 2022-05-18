@@ -11,7 +11,8 @@ class GamePlataform extends Model
 
     protected $fillable = [
         'name',
-        'company'
+        'company',
+        'acronym'
     ];
 
     protected $casts = [
