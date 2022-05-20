@@ -22,4 +22,18 @@ class GamePlataformFactory extends Factory
             'acronym' => $this->faker->text(5)
         ];
     }
+
+    /**
+     * Indicate that the model's is_active should be false.
+     *
+     * @return static
+     */
+    public function isInactive()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'is_active' => false,
+            ];
+        });
+    }
 }

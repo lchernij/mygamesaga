@@ -28,7 +28,7 @@
                     </div>
 
                     <div class="block mt-4">
-                        <x-label :value="__('Status')" />
+                        <x-label :value="__('Active')" />
                         <x-label :value="$gamePlataform->is_active" />
                     </div>
 
