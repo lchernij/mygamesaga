@@ -19,7 +19,7 @@ class GameGenreFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'acronym' => $this->faker->text(5),
-            'pt_br_name' => $this->faker->name()
+            'description' => $this->faker->text(1000)
         ];
     }
 
@@ -33,6 +33,21 @@ class GameGenreFactory extends Factory
         return $this->state(function (array $attributes) {
             return [
                 'is_active' => false,
+            ];
+        });
+    }
+
+    /**
+     * Indicate that the model's pt_br fields are filled.
+     *
+     * @return static
+     */
+    public function withPtBrLocalization()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'pt_br_name' => $this->faker->name(),
+                'pt_br_description' => $this->faker->text(1000)
             ];
         });
     }
