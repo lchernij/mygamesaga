@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('game-plataforms.index')" :active="request()->routeIs('game-plataforms.*')">
                         {{ __('Game Plataforms') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('game-genres.index')" :active="request()->routeIs('game-genres.*')">
+                        {{ __('Game Genres') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -70,6 +73,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('game-plataforms.index')" :active="request()->routeIs('game-plataforms.*')">
                 {{ __('Game Plataforms') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('game-genres.index')" :active="request()->routeIs('game-genres.*')">
+                {{ __('Game Genres') }}
             </x-responsive-nav-link>
         </div>
 
