@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
             ]);
         }
         $this->call([
-            GamePlataformSeeder::class
+            GamePlataformSeeder::class,
+            GameGenreSeeder::class
         ]);
     }
 }

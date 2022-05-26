@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\GameGenreController;
 use App\Http\Controllers\Admin\GamePlataformController;
 use App\Http\Controllers\Guess\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,10 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 # Admin context
 Route::prefix('hq')->middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::resource('/game-genres', GameGenreController::class);
+    Route::get('/game-genres/{game_genre}/active', [GameGenreController::class, 'active'])->name('game-genres.active');
+    Route::get('/game-genres/{game_genre}/inactive', [GameGenreController::class, 'inactive'])->name('game-genres.inactive');
 
     Route::resource('/game-plataforms', GamePlataformController::class);
     Route::get('/game-plataforms/{game_plataform}/active', [GamePlataformController::class, 'active'])->name('game-plataforms.active');

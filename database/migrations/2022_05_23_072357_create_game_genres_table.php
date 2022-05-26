@@ -13,12 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('game_plataforms', function (Blueprint $table) {
+        Schema::create('game_genres', function (Blueprint $table) {
             $table->id();
 
             $table->string("name")->index();
-            $table->string("company")->index()->nullable();
             $table->string("acronym")->index()->nullable();
+            $table->text("description")->nullable();
+            $table->string("pt_br_name")->index()->nullable();
+            $table->text("pt_br_description")->nullable();
             $table->boolean("is_active")->default(true);
 
             $table->timestamps();
@@ -33,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('game_plataforms');
+        Schema::dropIfExists('game_genres');
     }
 };
