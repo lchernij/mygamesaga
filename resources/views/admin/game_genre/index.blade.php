@@ -32,8 +32,16 @@
                                     <dd class="px-1.5 ring-1 ring-slate-200 rounded">{{ $gameGenre->acronym }}</dd>
                                 </div>
                                 <div class="ml-2">
-                                    <dt class="sr-only">{{ __('Description') }} </dt>
+                                    <dt class="sr-only">{{ __('Description EN') }} </dt>
                                     <dd>{{ $gameGenre->shortDescription }}</dd>
+                                </div>
+                                <div class="ml-2">
+                                    <dt class="sr-only">{{ __('name PT_BR') }} </dt>
+                                    <dd>{{ $gameGenre->pt_br_name }}</dd>
+                                </div>
+                                <div class="ml-2">
+                                    <dt class="sr-only">{{ __('Description PT_BR') }} </dt>
+                                    <dd>{{ $gameGenre->shortDescriptionPtBr }}</dd>
                                 </div>
                                 <div class="ml-2">
                                     <dt class="sr-only">{{ __('Status') }}</dt>

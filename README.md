@@ -14,6 +14,7 @@ This installation is based in Ubuntu 22 OS.
 |Build JS and CSS|`npm run dev`|
 |Run tests|`php artisan test`|
 |Run tests with coverage|`vendor/bin/phpunit --coverage-html .github/workflows/reports/`|
+|Run tests with specify data set from data provider|`php artisan test --filter=test_name@data_set_index`|
 
 ### General
 
