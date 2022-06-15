@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GameGenreController;
 use App\Http\Controllers\Admin\GamePlataformController;
+use App\Http\Controllers\Admin\GameTagController;
 use App\Http\Controllers\Guess\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +32,10 @@ Route::prefix('hq')->middleware(['auth'])->group(function () {
     Route::resource('/game-plataforms', GamePlataformController::class);
     Route::get('/game-plataforms/{game_plataform}/active', [GamePlataformController::class, 'active'])->name('game-plataforms.active');
     Route::get('/game-plataforms/{game_plataform}/inactive', [GamePlataformController::class, 'inactive'])->name('game-plataforms.inactive');
+
+    Route::resource('/game-tags', GameTagController::class);
+    Route::get('/game-tags/{game_tag}/active', [GameTagController::class, 'active'])->name('game-tags.active');
+    Route::get('/game-tags/{game_tag}/inactive', [GameTagController::class, 'inactive'])->name('game-tags.inactive');
 });
 
 # Auth context
