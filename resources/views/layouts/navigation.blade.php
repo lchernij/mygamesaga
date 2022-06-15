@@ -21,6 +21,9 @@
                     <x-nav-link :href="route('game-genres.index')" :active="request()->routeIs('game-genres.*')">
                         {{ __('Game Genres') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('game-tags.index')" :active="request()->routeIs('game-tags.*')">
+                        {{ __('Game Tags') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -76,6 +79,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('game-genres.index')" :active="request()->routeIs('game-genres.*')">
                 {{ __('Game Genres') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('game-tags.index')" :active="request()->routeIs('game-tags.*')">
+                {{ __('Game Tags') }}
             </x-responsive-nav-link>
         </div>
 
